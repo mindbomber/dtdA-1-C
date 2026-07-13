@@ -32,7 +32,7 @@ jobs:
         env:
           EMPIRICAL_OUT: empirical_results
           PHYSIONET_DATA: physionet_data
-        run: python empirical/run_empirical_cardiorespiratory.py
+        run: python empirical/run_empirical_cardiorespiratory_corrected.py
       - name: Archive results
         uses: actions/upload-artifact@v4
         with:
