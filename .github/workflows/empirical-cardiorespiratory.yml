@@ -29,20 +29,30 @@ jobs:
           python -m pip install --upgrade pip
           pip install wfdb numpy pandas scipy matplotlib scikit-learn statsmodels ripser tabulate
       - name: Run empirical study
+        id: empirical
+        continue-on-error: true
         env:
           EMPIRICAL_OUT: empirical_results
           PHYSIONET_DATA: physionet_data
-        run: python empirical/run_empirical_cardiorespiratory_corrected.py
-      - name: Archive results
+        run: |
+          mkdir -p empirical_results
+          set -o pipefail
+          python empirical/run_empirical_cardiorespiratory_corrected.py 2>&1 | tee empirical_results/workflow_run.log
+      - name: Archive results and logs
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: empirical-cardiorespiratory-results
           path: empirical_results
           retention-days: 30
-      - name: Commit reproducible results to study branch
+      - name: Commit reproducible results and logs to study branch
+        if: always()
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add empirical_results
-          git commit -m 'Add empirical cardiorespiratory results' || exit 0
+          git commit -m 'Add empirical cardiorespiratory results and logs' || exit 0
           git push origin HEAD:${{ github.head_ref }}
+      - name: Propagate analysis failure
+        if: steps.empirical.outcome == 'failure'
+        run: exit 1
