@@ -5,7 +5,7 @@ import re
 import numpy as np
 import pandas as pd
 import wfdb
-from empirical import run_empirical_cardiorespiratory as base
+import run_empirical_cardiorespiratory as base
 
 
 def parse_st_annotations(path, fs, duration_sec):
