@@ -1,26 +1,14 @@
 dA/dt​=−πϵ(1−γ)+C
 
-π\pi
+π\pi = optimization pressure
 
-optimization pressure
+ϵ\epsilon = constraint misclassification
 
-ϵ\epsilon
+γ\gamma = feedback fidelity / visibility
 
-constraint misclassification
+Λ\Lambda = irreversible loss
 
-γ\gamma
+C = correction capacity
 
-feedback fidelity / visibility
-
-Λ\Lambda
-
-irreversible loss
-
-C
-
-correction capacity
-
-Φ\Phi
-
-viable-region drift
+Φ\Phi = viable-region drift
 
