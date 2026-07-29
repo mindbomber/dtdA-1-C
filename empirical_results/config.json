@@ -1,0 +1,9 @@
+{
+  "target_fs": 4.0,
+  "window_sec": 300,
+  "step_sec": 150,
+  "bins": 24,
+  "recurrence_points": 180,
+  "surrogate_reps": 40,
+  "seed": 20260713
+}

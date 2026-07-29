@@ -1,0 +1,140 @@
+Downloading fantasia to physionet_data/fantasia
+Generating record list for: f1o01
+Generating record list for: f1o02
+Generating record list for: f1o03
+Generating record list for: f1o04
+Generating record list for: f1o05
+Generating record list for: f1o06
+Generating record list for: f1o07
+Generating record list for: f1o08
+Generating record list for: f1o09
+Generating record list for: f1o10
+Generating record list for: f1y01
+Generating record list for: f1y02
+Generating record list for: f1y03
+Generating record list for: f1y04
+Generating record list for: f1y05
+Generating record list for: f1y06
+Generating record list for: f1y07
+Generating record list for: f1y08
+Generating record list for: f1y09
+Generating record list for: f1y10
+Generating record list for: f2o01
+Generating record list for: f2o02
+Generating record list for: f2o03
+Generating record list for: f2o04
+Generating record list for: f2o05
+Generating record list for: f2o06
+Generating record list for: f2o07
+Generating record list for: f2o08
+Generating record list for: f2o09
+Generating record list for: f2o10
+Generating record list for: f2y01
+Generating record list for: f2y02
+Generating record list for: f2y03
+Generating record list for: f2y04
+Generating record list for: f2y05
+Generating record list for: f2y06
+Generating record list for: f2y07
+Generating record list for: f2y08
+Generating record list for: f2y09
+Generating record list for: f2y10
+Generating list of all files for: f1o01
+Generating list of all files for: f1o02
+Generating list of all files for: f1o03
+Generating list of all files for: f1o04
+Generating list of all files for: f1o05
+Generating list of all files for: f1o06
+Generating list of all files for: f1o07
+Generating list of all files for: f1o08
+Generating list of all files for: f1o09
+Generating list of all files for: f1o10
+Generating list of all files for: f1y01
+Generating list of all files for: f1y02
+Generating list of all files for: f1y03
+Generating list of all files for: f1y04
+Generating list of all files for: f1y05
+Generating list of all files for: f1y06
+Generating list of all files for: f1y07
+Generating list of all files for: f1y08
+Generating list of all files for: f1y09
+Generating list of all files for: f1y10
+Generating list of all files for: f2o01
+Generating list of all files for: f2o02
+Generating list of all files for: f2o03
+Generating list of all files for: f2o04
+Generating list of all files for: f2o05
+Generating list of all files for: f2o06
+Generating list of all files for: f2o07
+Generating list of all files for: f2o08
+Generating list of all files for: f2o09
+Generating list of all files for: f2o10
+Generating list of all files for: f2y01
+Generating list of all files for: f2y02
+Generating list of all files for: f2y03
+Generating list of all files for: f2y04
+Generating list of all files for: f2y05
+Generating list of all files for: f2y06
+Generating list of all files for: f2y07
+Generating list of all files for: f2y08
+Generating list of all files for: f2y09
+Generating list of all files for: f2y10
+Created local base download directory: physionet_data/fantasia
+Downloading files...
+Finished downloading files
+Downloading slpdb to physionet_data/slpdb
+Generating record list for: slp01a
+Generating record list for: slp01b
+Generating record list for: slp02a
+Generating record list for: slp02b
+Generating record list for: slp03
+Generating record list for: slp04
+Generating record list for: slp14
+Generating record list for: slp16
+Generating record list for: slp32
+Generating record list for: slp37
+Generating record list for: slp41
+Generating record list for: slp45
+Generating record list for: slp48
+Generating record list for: slp59
+Generating record list for: slp60
+Generating record list for: slp61
+Generating record list for: slp66
+Generating record list for: slp67x
+Generating list of all files for: slp01a
+Generating list of all files for: slp01b
+Generating list of all files for: slp02a
+Generating list of all files for: slp02b
+Generating list of all files for: slp03
+Generating list of all files for: slp04
+Generating list of all files for: slp14
+Generating list of all files for: slp16
+Generating list of all files for: slp32
+Generating list of all files for: slp37
+Generating list of all files for: slp41
+Generating list of all files for: slp45
+Generating list of all files for: slp48
+Generating list of all files for: slp59
+Generating list of all files for: slp60
+Generating list of all files for: slp61
+Generating list of all files for: slp66
+Generating list of all files for: slp67x
+Created local base download directory: physionet_data/slpdb
+Downloading files...
+Finished downloading files
+Traceback (most recent call last):
+  File "/home/runner/work/dtdA-1-C/dtdA-1-C/empirical/run_empirical_cardiorespiratory_corrected.py", line 69, in <module>
+    base.main()
+  File "/home/runner/work/dtdA-1-C/dtdA-1-C/empirical/run_empirical_cardiorespiratory.py", line 411, in main
+    fdf,sur,FANTASIA_SERIES,hists=process_fantasia(fantasia)
+                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/dtdA-1-C/dtdA-1-C/empirical/run_empirical_cardiorespiratory.py", line 182, in process_fantasia
+    records=[x.strip() for x in (dbdir/'RECORDS').read_text().splitlines() if x.strip()]
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/pathlib.py", line 1058, in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/pathlib.py", line 1044, in open
+    return io.open(self, mode, buffering, encoding, errors, newline)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'physionet_data/fantasia/RECORDS'
